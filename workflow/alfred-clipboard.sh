@@ -135,26 +135,26 @@ number_of_original_rows=$(sqlite3 "$ALFRED_DB" 'select count(*) from clipboard;'
 
 
 function backup_alfred_db {
-    echo "[+] Backing up Alfred Clipboard History DB..."
+    echo "⏳️ Backing up Alfred Clipboard History DB..."
     cp "$ALFRED_DB" "$BACKUP_DB"
     number_of_backed_up_rows=$(sqlite3 "$BACKUP_DB" 'select count(*) from clipboard;')
-    echo "    √ Read     $number_of_original_rows items from $ALFRED_DB_NAME"
-    echo "    √ Wrote    $number_of_backed_up_rows items to $BACKUP_DB_NAME"
+    echo "    ✔️ Read     $number_of_original_rows items from $ALFRED_DB_NAME"
+    echo "    ✔️ Wrote    $number_of_backed_up_rows items to $BACKUP_DB_NAME"
 }
 
 function init_master_db {
-    echo -e "\n[+] Initializing new clipboard database with $number_of_backed_up_rows items..."
+    echo -e "\n⏳️ Initializing new clipboard database with $number_of_backed_up_rows items..."
     cp "$BACKUP_DB" "$MERGED_DB"
-    echo "    √ Copied new db $MERGED_DB"
+    echo "    ✔️ Copied new db $MERGED_DB"
     echo
     sqlite3 "$MERGED_DB" ".schema" | sed 's/^/    /'
 }
 
 function update_master_db {
-    echo -e "\n[*] Updating Master Clipboard History DB..."
+    echo -e "\n⏳️ Updating Master Clipboard History DB..."
     existing_rows=$(sqlite3 "$MERGED_DB" 'select count(*) from clipboard;')
 
-    echo "    √ Read     $existing_rows existing items from "$(basename "$MERGED_DB")
+    echo "    ✔️ Read     $existing_rows existing items from "$(basename "$MERGED_DB")
     sqlite3 "$MERGED_DB" "
         attach '$MERGED_DB' as merged_db;
         attach '$BACKUP_DB' as latest_db;
@@ -166,13 +166,13 @@ function update_master_db {
     "
     merged_rows=$(sqlite3 "$MERGED_DB" 'select count(*) from clipboard;')
     new_rows=$(( merged_rows - existing_rows ))
-    echo "    √ Incoming $number_of_backed_up_rows items from backup you just created to $MERGED_DB_NAME"
-    echo "    √ Merged   $new_rows new items to Master DB"
-    # echo "    √ Wrote    $merged_rows total items to $MERGED_DB_NAME"
+    echo "    ✔️ Incoming $number_of_backed_up_rows items from backup you just created to $MERGED_DB_NAME"
+    echo "    ✔️ Merged   $new_rows new items to Master DB"
+    # echo "    ✔️ Wrote    $merged_rows total items to $MERGED_DB_NAME"
 }
 
 function bump_alfred_db_timestamps {
-    echo -e "\n[+] Bumping timestamps in clipboard database so that older items don't expire..."
+    echo -e "\n⏳️ Bumping timestamps in clipboard database so that older items don't expire..."
     echo "NOT YET IMPLEMENTED"
     exit 4
     # TODO
@@ -207,14 +207,14 @@ function backup {
     [[ -f "$MERGED_DB" ]] || init_master_db
     update_master_db
 
-    echo -e "\n[√] Done backing up clipboard history."
+    echo -e "\n✅️ Done backing up clipboard history."
     summary
 }
 
 function bump {
     backup_alfred_db
     bump_alfred_db_timestamps
-    echo -e "\n[√] Done bumping clipboard history timestamps."
+    echo -e "\n✅️ Done bumping clipboard history timestamps."
     summary
 }
 
