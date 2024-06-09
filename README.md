@@ -1,10 +1,10 @@
 # Clipboard History Archive for Alfred
 
-Backup Alfred's clipboard history so it doesn't expire!
+Backup Alfred’s clipboard history so it doesn’t expire!
 
-Alfred's Clipboard History can only keep items copied within 3 months at most. With this workflow you can have unlimited amount of items ready to search for. 
+Alfred’s Clipboard History can only keep items copied within 3 months at most. With this workflow you can have unlimited amount of items ready to search for. 
 
-This workflow lets you backup data from Alfred's Clipboard History (only texts will be backed up). Merge the backed up data to a master database (without duplications). And search in the master database. 
+This workflow lets you backup data from Alfred’s Clipboard History (only texts will be backed up). Merge the backed up data to a master database (without duplications). And search in the master database. 
 
 *You will need to specify a directory first. Inside the ‘Configure Workflow…’ button, find ‘Backup to’ option and select a folder you want to backup to.*
 
@@ -20,7 +20,7 @@ All your data will be backed up to the directory you specified inside ‘Configu
 
 ## Check Status
 
-Shows you how many items are currently in Alfred's Clipboard History database and your master database (if you have backed up before).
+Shows you how many items are currently in Alfred’s Clipboard History database and your master database (if you have backed up before).
 
 Invoke the `clipboardarchive` keyword (can be customized inside ‘Configure Workflow…’ button) and choose ‘Status of …’ option.
 
@@ -38,10 +38,10 @@ Clipboard items matching your query will show in the result.
 
 ![](images/2.png)
 
-You can hit return to copy the item to clipboard or hit ⌘ return to view the item in Alfred's Text View (Alfred 5.5 required). You can get right back to the previous window by pressing Esc.
+You can hit return to copy the item to clipboard or hit ⌘ return to view the item in Alfred’s Text View (Alfred 5.5 required). You can get right back to the previous window by pressing Esc.
 
 ![](images/7.png)
 
 ![](images/8.png)
 
-Inspired by a [topic](https://www.alfredforum.com/topic/10969-keep-clipboard-history-forever/?do=findComment&comment=68859) on the Alfred Forum. The backup function is base on an modified version of [theSquashSH](https://www.alfredforum.com/profile/4058-thesquashsh/)'s [script](https://gist.github.com/pirate/6551e1c00a7c4b0c607762930e22804c).
+Inspired by a [topic](https://www.alfredforum.com/topic/10969-keep-clipboard-history-forever/?do=findComment&comment=68859) on the Alfred Forum. The backup function is base on an modified version of [theSquashSH](https://www.alfredforum.com/profile/4058-thesquashsh/)’s [script](https://gist.github.com/pirate/6551e1c00a7c4b0c607762930e22804c).
