@@ -12,7 +12,7 @@ This workflow lets you backup data from Alfred’s Clipboard History (only texts
 
 Invoke the `clipboardarchive` keyword (can be customized inside ‘Configure Workflow…’ button) and choose ‘Backup to …’ option.
 
-All your data will be backed up to the directory you specified inside ‘Configure Workflow…’. If you have no backups. A new ‘all.sqlite3’ database will be created to store all backed up items from now on. 
+All your data will be backed up to the directory you specified inside ‘Configure Workflow…’. A new ‘all.sqlite3’ database will be created to store all backed up items from now on if you have no backups.
 
 ![](images/3.png)
 
