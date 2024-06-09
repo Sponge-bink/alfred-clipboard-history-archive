@@ -198,8 +198,8 @@ function summary {
 
 function status {
     merged_rows=$(sqlite3 "$MERGED_DB" 'select count(*) from clipboard;')
-    echo "Alfred: $ALFRED_DB ($number_of_original_rows items)"
-    echo "Master: $MERGED_DB ($merged_rows items)"
+    echo "🎩 Alfred: $ALFRED_DB ($number_of_original_rows items)"
+    echo "💾 Master: $MERGED_DB ($merged_rows items)"
 }
 
 function backup {
