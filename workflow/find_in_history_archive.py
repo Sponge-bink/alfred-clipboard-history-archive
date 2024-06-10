@@ -9,17 +9,21 @@ def search_clipboard(keyword, db_path):
     c = conn.cursor()
 
     # Search for the keyword in the 'item' column of the 'clipboard' table
-    c.execute("SELECT item, ts FROM clipboard WHERE item LIKE ?", ('%' + keyword + '%',))
+    c.execute("SELECT item, ts, apppath, app FROM clipboard WHERE item LIKE ?", ('%' + keyword + '%',))
     results = c.fetchall()
 
     output = []
-    for item, ts in results:
+    for item, ts, apppath, app in results:
         title = item[:120] if len(item) > 120 else item
         output.append({
             'title': title,
             'arg': item,
-            'timestamp': ts + 978307200,
-            'subtitle': f"{str(item.count('\n') + 1) + " lines, " if item.count('\n') else ""}{len(item)} characters, copied at {datetime.datetime.fromtimestamp(ts + 978307200).strftime('%Y-%m-%d %-I:%M:%S %p')}"
+            'timestamp': ts,
+            'subtitle': f"{str(item.count('\n') + 1) + " lines, " if item.count('\n') else ""}{len(item)} characters, copied at {datetime.datetime.fromtimestamp(ts + 978307200).strftime('%Y-%m-%d %-I:%M:%S %p')} from {app}",
+            'icon': {
+                'path': apppath,
+                'type': 'fileicon',
+            }
         })
 
     conn.close()
