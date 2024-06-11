@@ -14,9 +14,9 @@ Invoke the `clipboardarchive` keyword (can be customized inside ‘Configure Wor
 
 All your data will be backed up to the directory you specified inside ‘Configure Workflow…’. A new ‘all.sqlite3’ database will be created to store all backed up items from now on if you have no backups.
 
-![](images/3.png)
+![](workflow/images/3.png)
 
-![](images/6.png)
+![](workflow/images/6.png)
 
 ## Check Status
 
@@ -24,24 +24,24 @@ Shows you how many items are currently in Alfred’s Clipboard History database 
 
 Invoke the `clipboardarchive` keyword (can be customized inside ‘Configure Workflow…’ button) and choose ‘Status of …’ option.
 
-![](images/4.png)
+![](workflow/images/4.png)
 
-![](images/5.png)
+![](workflow/images/5.png)
 
 ## Search
 
 Invoke the `pp` keyword (can be customized inside ‘Configure Workflow…’ button) or the hotkey ⌘⌥X (can be customized by editing the Hotkey object) and start typing. 
 
-![](images/1.png)
+![](workflow/images/1.png)
 
 Clipboard items matching your query will show in the result. 
 
-![](images/2.png)
+![](workflow/images/2.png)
 
 You can hit return to copy the item to clipboard or hit ⌘ return to view the item in Alfred’s Text View (Alfred 5.5 required). You can get right back to the previous window by pressing Esc.
 
-![](images/7.png)
+![](workflow/images/7.png)
 
-![](images/8.png)
+![](workflow/images/8.png)
 
 Inspired by a [topic](https://www.alfredforum.com/topic/10969-keep-clipboard-history-forever/?do=findComment&comment=68859) on the Alfred Forum. The backup function is base on a modified version of [theSquashSH](https://www.alfredforum.com/profile/4058-thesquashsh/)’s [script](https://gist.github.com/pirate/6551e1c00a7c4b0c607762930e22804c).
