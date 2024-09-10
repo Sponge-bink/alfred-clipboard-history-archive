@@ -493,10 +493,8 @@ Inspired by a [topic](https://www.alfredforum.com/topic/10969-keep-clipboard-his
 			<string>history_archive_keyword</string>
 		</dict>
 	</array>
-	<key>variablesdontexport</key>
-	<array/>
 	<key>version</key>
-	<string>0.2</string>
+	<string>0.3</string>
 	<key>webaddress</key>
 	<string>https://github.com/Sponge-bink/alfred-clipboard-history-archive</string>
 </dict>

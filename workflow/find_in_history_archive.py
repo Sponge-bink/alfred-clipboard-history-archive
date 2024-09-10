@@ -3,13 +3,25 @@ import sys
 import datetime
 import json
 
+import re
+import unicodedata
+
+
+def convert_dakuten(chars):
+    if not type(chars) == str:
+        pass
+    else:
+        chars = re.sub(r"\u309B", "\u3099", chars)
+        chars = re.sub(r"\u309C", "\u309A", chars)
+        return unicodedata.normalize("NFC", chars)
+
 
 def search_clipboard(keyword, db_path):
     conn = sqlite3.connect(db_path)
     c = conn.cursor()
 
     # Search for the keyword in the 'item' column of the 'clipboard' table
-    c.execute("SELECT item, ts, apppath, app FROM clipboard WHERE item LIKE ?", ('%' + keyword + '%',))
+    c.execute("SELECT item, ts, apppath, app FROM clipboard WHERE item LIKE ?", ('%' + convert_dakuten(keyword) + '%',))
     results = c.fetchall()
 
     output = []
